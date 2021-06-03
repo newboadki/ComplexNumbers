@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		00DCF3ED266563E500B70B46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCF3D8266563E300B70B46 /* ContentView.swift */; };
 		00DCF3EE266563E500B70B46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00DCF3D9266563E500B70B46 /* Assets.xcassets */; };
 		00DCF3EF266563E500B70B46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00DCF3D9266563E500B70B46 /* Assets.xcassets */; };
+		00DCF3FA266564B400B70B46 /* ComplexModule in Frameworks */ = {isa = PBXBuildFile; productRef = 00DCF3F9266564B400B70B46 /* ComplexModule */; };
+		00DCF3FC266564B400B70B46 /* RealModule in Frameworks */ = {isa = PBXBuildFile; productRef = 00DCF3FB266564B400B70B46 /* RealModule */; };
+		00DCF3FE266564B400B70B46 /* Numerics in Frameworks */ = {isa = PBXBuildFile; productRef = 00DCF3FD266564B400B70B46 /* Numerics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00DCF3FC266564B400B70B46 /* RealModule in Frameworks */,
+				00DCF3FE266564B400B70B46 /* Numerics in Frameworks */,
+				00DCF3FA266564B400B70B46 /* ComplexModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +112,11 @@
 			dependencies = (
 			);
 			name = "ComplexNumbers (iOS)";
+			packageProductDependencies = (
+				00DCF3F9266564B400B70B46 /* ComplexModule */,
+				00DCF3FB266564B400B70B46 /* RealModule */,
+				00DCF3FD266564B400B70B46 /* Numerics */,
+			);
 			productName = "ComplexNumbers (iOS)";
 			productReference = 00DCF3DE266563E500B70B46 /* ComplexNumbers.app */;
 			productType = "com.apple.product-type.application";
@@ -153,6 +164,9 @@
 				Base,
 			);
 			mainGroup = 00DCF3D1266563E300B70B46;
+			packageReferences = (
+				00DCF3F8266564B400B70B46 /* XCRemoteSwiftPackageReference "swift-numerics" */,
+			);
 			productRefGroup = 00DCF3DF266563E500B70B46 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -439,6 +453,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00DCF3F8266564B400B70B46 /* XCRemoteSwiftPackageReference "swift-numerics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-numerics";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00DCF3F9266564B400B70B46 /* ComplexModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00DCF3F8266564B400B70B46 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = ComplexModule;
+		};
+		00DCF3FB266564B400B70B46 /* RealModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00DCF3F8266564B400B70B46 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = RealModule;
+		};
+		00DCF3FD266564B400B70B46 /* Numerics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00DCF3F8266564B400B70B46 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = Numerics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 00DCF3D2266563E300B70B46 /* Project object */;
 }
