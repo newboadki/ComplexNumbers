@@ -10,13 +10,17 @@ import ComplexModule
 
 
 struct CoordinateSystem: View {
+    
+    private let distanceBetweenMarks: CGFloat = 50
+    private let axisLineWidth: CGFloat = 1
+    
     var body: some View {
         ZStack {
-            CoordinateXAxis(distance: 50)
-                .stroke(lineWidth: 1)
+            CoordinateXAxis(distance: distanceBetweenMarks)
+                .stroke(lineWidth: axisLineWidth)
             
-            CoordinateYAxis(distance: 50)
-                .stroke(lineWidth: 1)
+            CoordinateYAxis(distance: distanceBetweenMarks)
+                .stroke(lineWidth: axisLineWidth)
         }
     }
     
