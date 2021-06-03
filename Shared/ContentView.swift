@@ -29,6 +29,19 @@ struct CoordinateSystem: View {
 
             VerticalMarks(distance: distanceBetweenMarks, markLength: 10)
                 .stroke(lineWidth: axisLineWidth)
+            
+            Circle()
+                .fill(Color.red)
+                .frame(width: 20, height: 20)
+                .offset(x: 50, y: -50)
+                .animation(.easeIn)
+            
+            Circle()
+                .fill(Color.blue)
+                .frame(width: 20, height: 20)
+                .offset(x: -100, y: -50*8)
+                .animation(.easeIn)
+
         }
     }
     
