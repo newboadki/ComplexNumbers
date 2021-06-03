@@ -16,19 +16,29 @@ struct CoordinateSystem: View {
     
     var body: some View {
         ZStack {
-            CoordinateXAxis(distance: distanceBetweenMarks)
+            // Grid
+            HorizontalMarks(distance: distanceBetweenMarks)
+                .stroke(Color.blue.opacity(0.2), style: StrokeStyle(lineWidth: axisLineWidth, lineCap: .round, lineJoin: .miter, miterLimit: 10, dash: [5,5], dashPhase: 0))
+
+            VerticalMarks(distance: distanceBetweenMarks)
+                .stroke(Color.blue.opacity(0.2), style: StrokeStyle(lineWidth: axisLineWidth, lineCap: .round, lineJoin: .miter, miterLimit: 10, dash: [5,5], dashPhase: 0))
+
+            // Axes
+            HorizontalMarks(distance: distanceBetweenMarks, markLength: 10)
                 .stroke(lineWidth: axisLineWidth)
-            
-            CoordinateYAxis(distance: distanceBetweenMarks)
+
+            VerticalMarks(distance: distanceBetweenMarks, markLength: 10)
                 .stroke(lineWidth: axisLineWidth)
         }
     }
     
-    struct CoordinateXAxis: Shape {
+    struct HorizontalMarks: Shape {
         let distance: CGFloat
+        let markLength: CGFloat?
         
-        init(distance: CGFloat = 50) {
+        init(distance: CGFloat = 50, markLength: CGFloat? = nil) {
             self.distance = distance
+            self.markLength = markLength
         }
             
         func path(in rect: CGRect) -> Path {
@@ -43,7 +53,7 @@ struct CoordinateSystem: View {
                          offsetStart: rect.midX,
                          offsetEnd: rect.maxX,
                          center: center,
-                         markLength: 10,
+                         markLength: markLength ?? rect.height,
                          axis: .horizontal,
                          fixedAxisValue: rect.midY,
                          offsetModifier: { $0 + distance },
@@ -54,7 +64,7 @@ struct CoordinateSystem: View {
                          offsetStart: rect.midX,
                          offsetEnd: rect.minX,
                          center: center,
-                         markLength: 10,
+                         markLength: markLength ?? rect.height,
                          axis: .horizontal,
                          fixedAxisValue: rect.midY,
                          offsetModifier: { $0 - distance },
@@ -63,11 +73,13 @@ struct CoordinateSystem: View {
         }
     }
 
-    struct CoordinateYAxis: Shape {
+    struct VerticalMarks: Shape {
         let distance: CGFloat
-
-        init(distance: CGFloat = 50) {
+        let markLength: CGFloat?
+        
+        init(distance: CGFloat = 50, markLength: CGFloat? = nil) {
             self.distance = distance
+            self.markLength = markLength
         }
 
         func path(in rect: CGRect) -> Path {
@@ -82,7 +94,7 @@ struct CoordinateSystem: View {
                          offsetStart: rect.midY,
                          offsetEnd: rect.minY,
                          center: center,
-                         markLength: 10,
+                         markLength: markLength ?? rect.width,
                          axis: .vertical,
                          fixedAxisValue: rect.midX,
                          offsetModifier: { $0 - distance },
@@ -93,7 +105,7 @@ struct CoordinateSystem: View {
                          offsetStart: rect.midY,
                          offsetEnd: rect.maxY,
                          center: center,
-                         markLength: 10,
+                         markLength: markLength ?? rect.width,
                          axis: .vertical,
                          fixedAxisValue: rect.midX,
                          offsetModifier: { $0 + distance },
