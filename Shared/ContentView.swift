@@ -8,11 +8,12 @@
 import SwiftUI
 import ComplexModule
 
-
 struct CoordinateSystem: View {
     
     private let distanceBetweenMarks: CGFloat = 50
     private let axisLineWidth: CGFloat = 1
+    @State var redPointX: CGFloat = 0
+    @State var redPointY: CGFloat = 0
     
     var body: some View {
         ZStack {
@@ -33,15 +34,18 @@ struct CoordinateSystem: View {
             Circle()
                 .fill(Color.red)
                 .frame(width: 20, height: 20)
-                .offset(x: 50, y: -50)
-                .animation(.easeIn)
+                .withCoordinates(x: redPointX, y: redPointY)
             
             Circle()
                 .fill(Color.blue)
                 .frame(width: 20, height: 20)
-                .offset(x: -100, y: -50*8)
-                .animation(.easeIn)
-
+                .withCoordinates(x: -2, y: -2)
+        }
+        .unitLength(distanceBetweenMarks)
+        .animation(.easeOut(duration: 2))
+        .onAppear {
+            self.redPointX = 2
+            self.redPointY = 4
         }
     }
     
@@ -168,8 +172,6 @@ func addMarks(toPath p: inout Path,
         offset = offsetModifier(offset)
     }
 }
-
-
 
 struct ContentView: View {
     var body: some View {
