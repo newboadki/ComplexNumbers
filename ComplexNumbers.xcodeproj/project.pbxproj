@@ -11,10 +11,12 @@
 		0043C1A2268BA9C600EC9AAE /* CoordinateSystemUnitLengthEvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043C1A0268BA9C600EC9AAE /* CoordinateSystemUnitLengthEvironmentKey.swift */; };
 		0043C1A4268BAB7500EC9AAE /* WithCoordinatesModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043C1A3268BAB7500EC9AAE /* WithCoordinatesModifier.swift */; };
 		0043C1A5268BAB7500EC9AAE /* WithCoordinatesModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043C1A3268BAB7500EC9AAE /* WithCoordinatesModifier.swift */; };
+		006BFB75268E46DF0093805E /* Polynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BFB74268E46DF0093805E /* Polynomial.swift */; };
+		006BFB77268E46FE0093805E /* PolynomialViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BFB76268E46FE0093805E /* PolynomialViews.swift */; };
 		00DCF3EA266563E500B70B46 /* ComplexNumbersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCF3D7266563E300B70B46 /* ComplexNumbersApp.swift */; };
 		00DCF3EB266563E500B70B46 /* ComplexNumbersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCF3D7266563E300B70B46 /* ComplexNumbersApp.swift */; };
-		00DCF3EC266563E500B70B46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCF3D8266563E300B70B46 /* ContentView.swift */; };
-		00DCF3ED266563E500B70B46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCF3D8266563E300B70B46 /* ContentView.swift */; };
+		00DCF3EC266563E500B70B46 /* CoordinateSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCF3D8266563E300B70B46 /* CoordinateSystem.swift */; };
+		00DCF3ED266563E500B70B46 /* CoordinateSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCF3D8266563E300B70B46 /* CoordinateSystem.swift */; };
 		00DCF3EE266563E500B70B46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00DCF3D9266563E500B70B46 /* Assets.xcassets */; };
 		00DCF3EF266563E500B70B46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00DCF3D9266563E500B70B46 /* Assets.xcassets */; };
 		00DCF3FA266564B400B70B46 /* ComplexModule in Frameworks */ = {isa = PBXBuildFile; productRef = 00DCF3F9266564B400B70B46 /* ComplexModule */; };
@@ -25,8 +27,10 @@
 /* Begin PBXFileReference section */
 		0043C1A0268BA9C600EC9AAE /* CoordinateSystemUnitLengthEvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateSystemUnitLengthEvironmentKey.swift; sourceTree = "<group>"; };
 		0043C1A3268BAB7500EC9AAE /* WithCoordinatesModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithCoordinatesModifier.swift; sourceTree = "<group>"; };
+		006BFB74268E46DF0093805E /* Polynomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polynomial.swift; sourceTree = "<group>"; };
+		006BFB76268E46FE0093805E /* PolynomialViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolynomialViews.swift; sourceTree = "<group>"; };
 		00DCF3D7266563E300B70B46 /* ComplexNumbersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexNumbersApp.swift; sourceTree = "<group>"; };
-		00DCF3D8266563E300B70B46 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		00DCF3D8266563E300B70B46 /* CoordinateSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateSystem.swift; sourceTree = "<group>"; };
 		00DCF3D9266563E500B70B46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00DCF3DE266563E500B70B46 /* ComplexNumbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComplexNumbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00DCF3E1266563E500B70B46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +60,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		006BFB73268E46C60093805E /* Maths */ = {
+			isa = PBXGroup;
+			children = (
+				006BFB74268E46DF0093805E /* Polynomial.swift */,
+			);
+			path = Maths;
+			sourceTree = "<group>";
+		};
+		006BFB78268E47710093805E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				006BFB7A268E47A80093805E /* Function Views */,
+				006BFB79268E47780093805E /* Coordinates System */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		006BFB79268E47780093805E /* Coordinates System */ = {
+			isa = PBXGroup;
+			children = (
+				0043C1A0268BA9C600EC9AAE /* CoordinateSystemUnitLengthEvironmentKey.swift */,
+				0043C1A3268BAB7500EC9AAE /* WithCoordinatesModifier.swift */,
+				00DCF3D8266563E300B70B46 /* CoordinateSystem.swift */,
+			);
+			path = "Coordinates System";
+			sourceTree = "<group>";
+		};
+		006BFB7A268E47A80093805E /* Function Views */ = {
+			isa = PBXGroup;
+			children = (
+				006BFB76268E46FE0093805E /* PolynomialViews.swift */,
+			);
+			path = "Function Views";
+			sourceTree = "<group>";
+		};
 		00DCF3D1266563E300B70B46 = {
 			isa = PBXGroup;
 			children = (
@@ -70,9 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				00DCF3D7266563E300B70B46 /* ComplexNumbersApp.swift */,
-				00DCF3D8266563E300B70B46 /* ContentView.swift */,
-				0043C1A0268BA9C600EC9AAE /* CoordinateSystemUnitLengthEvironmentKey.swift */,
-				0043C1A3268BAB7500EC9AAE /* WithCoordinatesModifier.swift */,
+				006BFB73268E46C60093805E /* Maths */,
+				006BFB78268E47710093805E /* Views */,
 				00DCF3D9266563E500B70B46 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -209,9 +247,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00DCF3EC266563E500B70B46 /* ContentView.swift in Sources */,
+				00DCF3EC266563E500B70B46 /* CoordinateSystem.swift in Sources */,
+				006BFB75268E46DF0093805E /* Polynomial.swift in Sources */,
 				0043C1A1268BA9C600EC9AAE /* CoordinateSystemUnitLengthEvironmentKey.swift in Sources */,
 				0043C1A4268BAB7500EC9AAE /* WithCoordinatesModifier.swift in Sources */,
+				006BFB77268E46FE0093805E /* PolynomialViews.swift in Sources */,
 				00DCF3EA266563E500B70B46 /* ComplexNumbersApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,7 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00DCF3ED266563E500B70B46 /* ContentView.swift in Sources */,
+				00DCF3ED266563E500B70B46 /* CoordinateSystem.swift in Sources */,
 				0043C1A2268BA9C600EC9AAE /* CoordinateSystemUnitLengthEvironmentKey.swift in Sources */,
 				0043C1A5268BAB7500EC9AAE /* WithCoordinatesModifier.swift in Sources */,
 				00DCF3EB266563E500B70B46 /* ComplexNumbersApp.swift in Sources */,

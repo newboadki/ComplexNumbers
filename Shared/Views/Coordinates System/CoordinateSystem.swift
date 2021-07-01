@@ -8,47 +8,10 @@
 import SwiftUI
 import ComplexModule
 
-struct Polynomial {
-    
-    ///  The order of each coefficient increases from 0 to N, with N being the order of the polynomial
-    var coefficients: [Double]
-    
-    func callAsFunction(_ x: Double) -> Double {
-        var y: Double = 0
-        for (index, c) in coefficients.enumerated() {
-            y += c * pow(x, Double(index))
-        }
-        return y
-    }
-}
 
-struct PolynomialPath: Shape {
-    
-    let polynomial: Polynomial
-    let xRange: Range<Double>
-    let unitToPointScale: Double
-    
-    func path(in rect: CGRect) -> Path {
-        Path { p in
-            p.move(to: CGPoint(x: xRange.lowerBound, y: polynomial(xRange.lowerBound)))
-            for x in stride(from: xRange.lowerBound, through: xRange.upperBound, by: 0.01) {
-                
-                /*
-                 * The rect's origin is the top-left corner with the positive y-axis goind down.
-                 * To draw around the center of the rect we need to:
-                 *  1. Scale the points to be aligned with the grid.
-                 *  2. Offset it.
-                 *  3. Invert y-axis values.                 
-                 */
-                let xOffset = (rect.width / 2)
-                let yOffset = (rect.height / 2)
-                let px = x * unitToPointScale + xOffset
-                let py = -polynomial(x) * unitToPointScale + yOffset
-                p.addLine(to: CGPoint(x: px, y: py))
-            }
-        }
-    }
-}
+let cuadratic = Polynomial(coefficients: [0, 0, 0.4])
+let cubic = Polynomial(coefficients: [0, 0, 1, 1])
+let r15 = (-15.0..<15.0)
 
 struct CoordinateSystem: View {
         
@@ -74,14 +37,15 @@ struct CoordinateSystem: View {
                 .stroke(lineWidth: axisLineWidth)
 
             // Functions
-            PolynomialPath(polynomial: Polynomial(coefficients: [0, 0, 1, 1]), xRange: (-15.0..<15.0), unitToPointScale: distanceBetweenMarks)
-                .stroke(Color.pink, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .miter, miterLimit: 0, dash: [], dashPhase: 0))
+            PolynomialView(polynomial: cubic,
+                           xRangeInUnits: r15,
+                           unitToPointScale: distanceBetweenMarks,
+                           color: .pink)
 
-            PolynomialPath(polynomial: Polynomial(coefficients: [0, 0, 0.4]), xRange: (-15.0..<15.0), unitToPointScale: distanceBetweenMarks)
-                .stroke(Color.blue, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .miter, miterLimit: 0, dash: [], dashPhase: 0))
-
-
-            
+            PolynomialView(polynomial: cuadratic,
+                           xRangeInUnits: r15,
+                           unitToPointScale: distanceBetweenMarks,
+                           color: .green)
         }
         .unitLength(distanceBetweenMarks)
     }
@@ -210,14 +174,8 @@ func addMarks(toPath p: inout Path,
     }
 }
 
-struct ContentView: View {
-    var body: some View {
-        CoordinateSystem()
-    }
-}
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CoordinateSystem()
     }
 }

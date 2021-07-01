@@ -14,6 +14,7 @@ extension View {
 }
 
 struct WithCoordinates: ViewModifier {
+    // UnitLengthInPoints, this should be renamed for clarity and for consistency because the concept is also used in other places of the codebase.
     @Environment(\.unitLength) private var unitLength: CGFloat
     private let x, y: CGFloat
     
