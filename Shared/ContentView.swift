@@ -8,12 +8,55 @@
 import SwiftUI
 import ComplexModule
 
-struct CoordinateSystem: View {
+struct Polynomial {
     
+    ///  The order of each coefficient increases from 0 to N, with N being the order of the polynomial
+    var coefficients: [Double]
+    
+    func callAsFunction(_ x: Double) -> Double {
+        var y: Double = 0
+        for (index, c) in coefficients.enumerated() {
+            y += c * pow(x, Double(index))
+        }
+        return y
+    }
+}
+
+struct PolynomialPath: Shape {
+    
+    let polynomial: Polynomial
+    let xRange: Range<Double>
+    let unitToPointScale: Double
+    
+    func path(in rect: CGRect) -> Path {
+        Path { p in
+            p.move(to: CGPoint(x: xRange.lowerBound, y: polynomial(xRange.lowerBound)))
+            for x in stride(from: xRange.lowerBound, through: xRange.upperBound, by: 0.01) {
+                
+                /*
+                 * The rect's origin is the top-left corner with the positive y-axis goind down.
+                 * To draw around the center of the rect we need to:
+                 *  1. Scale the points to be aligned with the grid.
+                 *  2. Offset it.
+                 *  3. Invert y-axis values.
+                 * So to draw around a
+                 */
+                let xOffset = (rect.width / 2)
+                let yOffset = (rect.height / 2)
+                let px = x * unitToPointScale + xOffset
+                let py = -polynomial(x) * unitToPointScale + yOffset
+                p.addLine(to: CGPoint(x: px, y: py))
+            }
+        }
+    }
+}
+
+struct CoordinateSystem: View {
+        
+    /// In points
     private let distanceBetweenMarks: CGFloat = 50
+    
     private let axisLineWidth: CGFloat = 1
-    @State var redPointX: CGFloat = 0
-    @State var redPointY: CGFloat = 0
     
     var body: some View {
         ZStack {
@@ -30,23 +73,41 @@ struct CoordinateSystem: View {
 
             VerticalMarks(distance: distanceBetweenMarks, markLength: 10)
                 .stroke(lineWidth: axisLineWidth)
+            Group {
+                Circle()
+                    .fill(Color.red)
+                    .frame(width: 20, height: 20)
+                    .withCoordinates(x: 1, y: 1)
+
+                Circle()
+                    .fill(Color.red)
+                    .frame(width: 20, height: 20)
+                    .withCoordinates(x: 2, y: 4)
+                
+                Circle()
+                    .fill(Color.red)
+                    .frame(width: 20, height: 20)
+                    .withCoordinates(x: 3, y: 9)
+
+                Circle()
+                    .fill(Color.red)
+                    .frame(width: 20, height: 20)
+                    .withCoordinates(x: 4, y: 16)
+
+                Circle()
+                    .fill(Color.blue)
+                    .frame(width: 20, height: 20)
+                    .withCoordinates(x: -2, y: -2)
+            }
             
-            Circle()
-                .fill(Color.red)
-                .frame(width: 20, height: 20)
-                .withCoordinates(x: redPointX, y: redPointY)
+            Group {
+                PolynomialPath(polynomial: Polynomial(coefficients: [0, 0, 1, 1]), xRange: (-15.0..<15.0), unitToPointScale: distanceBetweenMarks)
+                    .stroke(Color.pink, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .miter, miterLimit: 0, dash: [], dashPhase: 0))
+            }
+
             
-            Circle()
-                .fill(Color.blue)
-                .frame(width: 20, height: 20)
-                .withCoordinates(x: -2, y: -2)
         }
         .unitLength(distanceBetweenMarks)
-        .animation(.easeOut(duration: 2))
-        .onAppear {
-            self.redPointX = 2
-            self.redPointY = 4
-        }
     }
     
     struct HorizontalMarks: Shape {
