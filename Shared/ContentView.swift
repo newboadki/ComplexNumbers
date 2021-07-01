@@ -38,8 +38,7 @@ struct PolynomialPath: Shape {
                  * To draw around the center of the rect we need to:
                  *  1. Scale the points to be aligned with the grid.
                  *  2. Offset it.
-                 *  3. Invert y-axis values.
-                 * So to draw around a
+                 *  3. Invert y-axis values.                 
                  */
                 let xOffset = (rect.width / 2)
                 let yOffset = (rect.height / 2)
@@ -73,37 +72,14 @@ struct CoordinateSystem: View {
 
             VerticalMarks(distance: distanceBetweenMarks, markLength: 10)
                 .stroke(lineWidth: axisLineWidth)
-            Group {
-                Circle()
-                    .fill(Color.red)
-                    .frame(width: 20, height: 20)
-                    .withCoordinates(x: 1, y: 1)
 
-                Circle()
-                    .fill(Color.red)
-                    .frame(width: 20, height: 20)
-                    .withCoordinates(x: 2, y: 4)
-                
-                Circle()
-                    .fill(Color.red)
-                    .frame(width: 20, height: 20)
-                    .withCoordinates(x: 3, y: 9)
+            // Functions
+            PolynomialPath(polynomial: Polynomial(coefficients: [0, 0, 1, 1]), xRange: (-15.0..<15.0), unitToPointScale: distanceBetweenMarks)
+                .stroke(Color.pink, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .miter, miterLimit: 0, dash: [], dashPhase: 0))
 
-                Circle()
-                    .fill(Color.red)
-                    .frame(width: 20, height: 20)
-                    .withCoordinates(x: 4, y: 16)
+            PolynomialPath(polynomial: Polynomial(coefficients: [0, 0, 0.4]), xRange: (-15.0..<15.0), unitToPointScale: distanceBetweenMarks)
+                .stroke(Color.blue, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .miter, miterLimit: 0, dash: [], dashPhase: 0))
 
-                Circle()
-                    .fill(Color.blue)
-                    .frame(width: 20, height: 20)
-                    .withCoordinates(x: -2, y: -2)
-            }
-            
-            Group {
-                PolynomialPath(polynomial: Polynomial(coefficients: [0, 0, 1, 1]), xRange: (-15.0..<15.0), unitToPointScale: distanceBetweenMarks)
-                    .stroke(Color.pink, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .miter, miterLimit: 0, dash: [], dashPhase: 0))
-            }
 
             
         }
