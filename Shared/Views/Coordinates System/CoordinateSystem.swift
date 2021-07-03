@@ -15,47 +15,48 @@ let r15 = (-15.0..<15.0)
 
 struct CoordinateSystem: View {
         
-    /// In points
-    private let distanceBetweenMarks: CGFloat = 50
+    /// In points. One points equates to x points on the screen.
+    private let unitToPointsScale: CGFloat = 50
     
     private let axisLineWidth: CGFloat = 1
     
     var body: some View {
         ZStack {
             // Grid
-            HorizontalMarks(distance: distanceBetweenMarks)
+            HorizontalMarks(distance: unitToPointsScale)
                 .stroke(Color.blue.opacity(0.2), style: StrokeStyle(lineWidth: axisLineWidth, lineCap: .round, lineJoin: .miter, miterLimit: 10, dash: [5,5], dashPhase: 0))
 
-            VerticalMarks(distance: distanceBetweenMarks)
+            VerticalMarks(distance: unitToPointsScale)
                 .stroke(Color.blue.opacity(0.2), style: StrokeStyle(lineWidth: axisLineWidth, lineCap: .round, lineJoin: .miter, miterLimit: 10, dash: [5,5], dashPhase: 0))
 
             // Axes
-            HorizontalMarks(distance: distanceBetweenMarks, markLength: 10)
+            HorizontalMarks(distance: unitToPointsScale, markLength: 10)
                 .stroke(lineWidth: axisLineWidth)
 
-            VerticalMarks(distance: distanceBetweenMarks, markLength: 10)
+            VerticalMarks(distance: unitToPointsScale, markLength: 10)
                 .stroke(lineWidth: axisLineWidth)
 
             // Functions
             PolynomialView(polynomial: cubic,
                            xRangeInUnits: r15,
-                           unitToPointScale: distanceBetweenMarks,
+                           unitToPointScale: unitToPointsScale,
                            color: .pink)
 
             PolynomialView(polynomial: cuadratic,
                            xRangeInUnits: r15,
-                           unitToPointScale: distanceBetweenMarks,
+                           unitToPointScale: unitToPointsScale,
                            color: .green)
         }
-        .unitLength(distanceBetweenMarks)
+        .unitLength(unitToPointsScale)
+        .ignoresSafeArea()
     }
     
     struct HorizontalMarks: Shape {
-        let distance: CGFloat
+        let unitToPointsScale: CGFloat
         let markLength: CGFloat?
         
         init(distance: CGFloat = 50, markLength: CGFloat? = nil) {
-            self.distance = distance
+            self.unitToPointsScale = distance
             self.markLength = markLength
         }
             
@@ -74,7 +75,7 @@ struct CoordinateSystem: View {
                          markLength: markLength ?? rect.height,
                          axis: .horizontal,
                          fixedAxisValue: rect.midY,
-                         offsetModifier: { $0 + distance },
+                         offsetModifier: { $0 + unitToPointsScale },
                          continueIterating: { $0 < rect.maxX })
 
                 // Negative marks
@@ -85,18 +86,18 @@ struct CoordinateSystem: View {
                          markLength: markLength ?? rect.height,
                          axis: .horizontal,
                          fixedAxisValue: rect.midY,
-                         offsetModifier: { $0 - distance },
+                         offsetModifier: { $0 - unitToPointsScale },
                          continueIterating: { $0 > rect.minX })
             }
         }
     }
 
     struct VerticalMarks: Shape {
-        let distance: CGFloat
+        let unitToPointsScale: CGFloat
         let markLength: CGFloat?
         
         init(distance: CGFloat = 50, markLength: CGFloat? = nil) {
-            self.distance = distance
+            self.unitToPointsScale = distance
             self.markLength = markLength
         }
 
@@ -115,7 +116,7 @@ struct CoordinateSystem: View {
                          markLength: markLength ?? rect.width,
                          axis: .vertical,
                          fixedAxisValue: rect.midX,
-                         offsetModifier: { $0 - distance },
+                         offsetModifier: { $0 - unitToPointsScale },
                          continueIterating: { $0 > rect.minY })
 
                 // Negative marks
@@ -126,7 +127,7 @@ struct CoordinateSystem: View {
                          markLength: markLength ?? rect.width,
                          axis: .vertical,
                          fixedAxisValue: rect.midX,
-                         offsetModifier: { $0 + distance },
+                         offsetModifier: { $0 + unitToPointsScale },
                          continueIterating: { $0 < rect.maxY })
             }
         }
