@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct ComplexNumbersApp: App {
+    
+    private static let currentPolynomialDataSource = CurrentPolynomialDataSource()
+    private var menuPresenter = MenuPresenter(dataSource: currentPolynomialDataSource)
+    private var coordinateSystemPresenter = CoordinateSystemPresenter(dataSource: currentPolynomialDataSource)
+    
     var body: some Scene {
         WindowGroup {
-            CoordinateSystem()
+            ContainerView(presenter: menuPresenter,
+                          coordinateSytemPresenter: coordinateSystemPresenter)
         }
     }
 }

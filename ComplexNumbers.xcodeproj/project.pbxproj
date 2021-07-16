@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000C88C026A17DA2004062C5 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000C88BF26A17DA2004062C5 /* MenuPresenter.swift */; };
+		000C88C226A17F8B004062C5 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000C88C126A17F8B004062C5 /* MenuView.swift */; };
+		000C88C526A1CFE9004062C5 /* CurrentPolynomialDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000C88C426A1CFE9004062C5 /* CurrentPolynomialDataSource.swift */; };
+		000C88C726A1DDA2004062C5 /* CoordinateSystemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000C88C626A1DDA2004062C5 /* CoordinateSystemPresenter.swift */; };
 		0043C1A1268BA9C600EC9AAE /* CoordinateSystemUnitLengthEvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043C1A0268BA9C600EC9AAE /* CoordinateSystemUnitLengthEvironmentKey.swift */; };
 		0043C1A2268BA9C600EC9AAE /* CoordinateSystemUnitLengthEvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043C1A0268BA9C600EC9AAE /* CoordinateSystemUnitLengthEvironmentKey.swift */; };
 		0043C1A4268BAB7500EC9AAE /* WithCoordinatesModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043C1A3268BAB7500EC9AAE /* WithCoordinatesModifier.swift */; };
 		0043C1A5268BAB7500EC9AAE /* WithCoordinatesModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043C1A3268BAB7500EC9AAE /* WithCoordinatesModifier.swift */; };
 		006BFB75268E46DF0093805E /* Polynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BFB74268E46DF0093805E /* Polynomial.swift */; };
 		006BFB77268E46FE0093805E /* PolynomialViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BFB76268E46FE0093805E /* PolynomialViews.swift */; };
+		00A747022692061D00A81B9D /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A747012692061D00A81B9D /* ContainerView.swift */; };
 		00DCF3EA266563E500B70B46 /* ComplexNumbersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCF3D7266563E300B70B46 /* ComplexNumbersApp.swift */; };
 		00DCF3EB266563E500B70B46 /* ComplexNumbersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCF3D7266563E300B70B46 /* ComplexNumbersApp.swift */; };
 		00DCF3EC266563E500B70B46 /* CoordinateSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCF3D8266563E300B70B46 /* CoordinateSystem.swift */; };
@@ -25,10 +30,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		000C88BF26A17DA2004062C5 /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
+		000C88C126A17F8B004062C5 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		000C88C426A1CFE9004062C5 /* CurrentPolynomialDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPolynomialDataSource.swift; sourceTree = "<group>"; };
+		000C88C626A1DDA2004062C5 /* CoordinateSystemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateSystemPresenter.swift; sourceTree = "<group>"; };
 		0043C1A0268BA9C600EC9AAE /* CoordinateSystemUnitLengthEvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateSystemUnitLengthEvironmentKey.swift; sourceTree = "<group>"; };
 		0043C1A3268BAB7500EC9AAE /* WithCoordinatesModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithCoordinatesModifier.swift; sourceTree = "<group>"; };
 		006BFB74268E46DF0093805E /* Polynomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polynomial.swift; sourceTree = "<group>"; };
 		006BFB76268E46FE0093805E /* PolynomialViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolynomialViews.swift; sourceTree = "<group>"; };
+		00A747012692061D00A81B9D /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		00DCF3D7266563E300B70B46 /* ComplexNumbersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexNumbersApp.swift; sourceTree = "<group>"; };
 		00DCF3D8266563E300B70B46 /* CoordinateSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateSystem.swift; sourceTree = "<group>"; };
 		00DCF3D9266563E500B70B46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +70,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		000C88BE26A17D91004062C5 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				000C88BF26A17DA2004062C5 /* MenuPresenter.swift */,
+				000C88C126A17F8B004062C5 /* MenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		000C88C326A1CE1E004062C5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				000C88C426A1CFE9004062C5 /* CurrentPolynomialDataSource.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		006BFB73268E46C60093805E /* Maths */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +98,8 @@
 		006BFB78268E47710093805E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				000C88BE26A17D91004062C5 /* Menu */,
+				00A747002692060C00A81B9D /* Container */,
 				006BFB7A268E47A80093805E /* Function Views */,
 				006BFB79268E47780093805E /* Coordinates System */,
 			);
@@ -83,6 +112,7 @@
 				0043C1A0268BA9C600EC9AAE /* CoordinateSystemUnitLengthEvironmentKey.swift */,
 				0043C1A3268BAB7500EC9AAE /* WithCoordinatesModifier.swift */,
 				00DCF3D8266563E300B70B46 /* CoordinateSystem.swift */,
+				000C88C626A1DDA2004062C5 /* CoordinateSystemPresenter.swift */,
 			);
 			path = "Coordinates System";
 			sourceTree = "<group>";
@@ -93,6 +123,14 @@
 				006BFB76268E46FE0093805E /* PolynomialViews.swift */,
 			);
 			path = "Function Views";
+			sourceTree = "<group>";
+		};
+		00A747002692060C00A81B9D /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				00A747012692061D00A81B9D /* ContainerView.swift */,
+			);
+			path = Container;
 			sourceTree = "<group>";
 		};
 		00DCF3D1266563E300B70B46 = {
@@ -109,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				00DCF3D7266563E300B70B46 /* ComplexNumbersApp.swift */,
+				000C88C326A1CE1E004062C5 /* Data */,
 				006BFB73268E46C60093805E /* Maths */,
 				006BFB78268E47710093805E /* Views */,
 				00DCF3D9266563E500B70B46 /* Assets.xcassets */,
@@ -247,11 +286,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				000C88C726A1DDA2004062C5 /* CoordinateSystemPresenter.swift in Sources */,
 				00DCF3EC266563E500B70B46 /* CoordinateSystem.swift in Sources */,
 				006BFB75268E46DF0093805E /* Polynomial.swift in Sources */,
 				0043C1A1268BA9C600EC9AAE /* CoordinateSystemUnitLengthEvironmentKey.swift in Sources */,
+				000C88C026A17DA2004062C5 /* MenuPresenter.swift in Sources */,
+				000C88C226A17F8B004062C5 /* MenuView.swift in Sources */,
 				0043C1A4268BAB7500EC9AAE /* WithCoordinatesModifier.swift in Sources */,
 				006BFB77268E46FE0093805E /* PolynomialViews.swift in Sources */,
+				00A747022692061D00A81B9D /* ContainerView.swift in Sources */,
+				000C88C526A1CFE9004062C5 /* CurrentPolynomialDataSource.swift in Sources */,
 				00DCF3EA266563E500B70B46 /* ComplexNumbersApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

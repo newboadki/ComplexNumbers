@@ -9,9 +9,14 @@ import SwiftUI
 import ComplexModule
 
 
-let cuadratic = Polynomial(coefficients: [0, 0, 0.4])
-let cubic = Polynomial(coefficients: [0, 0, 1, 1])
-let r15 = (-15.0..<15.0)
+let cuadratic = Polynomial(coefficients: [Polynomial.Coefficient(id: 0, value: 0),
+                                          Polynomial.Coefficient(id: 1, value: 0),
+                                          Polynomial.Coefficient(id: 2, value: 0.4)])
+let cubic = Polynomial(coefficients: [Polynomial.Coefficient(id: 0, value: 0),
+                                      Polynomial.Coefficient(id: 1, value: 0),
+                                      Polynomial.Coefficient(id: 2, value: 1),
+                                      Polynomial.Coefficient(id: 3, value: 1)])
+let r15 = (-7.0..<7.0)
 
 struct CoordinateSystem: View {
         
@@ -19,6 +24,8 @@ struct CoordinateSystem: View {
     private let unitToPointsScale: CGFloat = 50
     
     private let axisLineWidth: CGFloat = 1
+    
+    @ObservedObject var presenter: CoordinateSystemPresenter
     
     var body: some View {
         ZStack {
@@ -37,18 +44,19 @@ struct CoordinateSystem: View {
                 .stroke(lineWidth: axisLineWidth)
 
             // Functions
-            PolynomialView(polynomial: cubic,
+            PolynomialView(polynomial: presenter.polynomial,
                            xRangeInUnits: r15,
                            unitToPointScale: unitToPointsScale,
                            color: .pink)
-
-            PolynomialView(polynomial: cuadratic,
-                           xRangeInUnits: r15,
-                           unitToPointScale: unitToPointsScale,
-                           color: .green)
         }
         .unitLength(unitToPointsScale)
         .ignoresSafeArea()
+        .onAppear {
+            self.presenter.bind()
+        }
+        .onDisappear {
+            self.presenter.unbind()
+        }
     }
     
     struct HorizontalMarks: Shape {
@@ -177,6 +185,6 @@ func addMarks(toPath p: inout Path,
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        CoordinateSystem()
+        CoordinateSystem(presenter: CoordinateSystemPresenter(dataSource: CurrentPolynomialDataSource()))
     }
 }
