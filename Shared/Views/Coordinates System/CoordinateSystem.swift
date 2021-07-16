@@ -16,7 +16,7 @@ let cubic = Polynomial(coefficients: [Polynomial.Coefficient(id: 0, value: 0),
                                       Polynomial.Coefficient(id: 1, value: 0),
                                       Polynomial.Coefficient(id: 2, value: 1),
                                       Polynomial.Coefficient(id: 3, value: 1)])
-let r15 = (-7.0..<7.0)
+let r15 = (-15.0..<15.0)
 
 struct CoordinateSystem: View {
         
@@ -48,6 +48,7 @@ struct CoordinateSystem: View {
                            xRangeInUnits: r15,
                            unitToPointScale: unitToPointsScale,
                            color: .pink)
+            
         }
         .unitLength(unitToPointsScale)
         .ignoresSafeArea()

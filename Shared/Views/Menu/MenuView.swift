@@ -51,7 +51,6 @@ struct Menu: View {
                         }
                     }
                 }
-                
             }
         }
     }

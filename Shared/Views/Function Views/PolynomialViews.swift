@@ -15,9 +15,8 @@ struct PolynomialPath: Shape {
         
     func path(in rect: CGRect) -> Path {
         Path { p in
-            p.move(to: CGPoint(x: xRangeInUnits.lowerBound, y: polynomial(xRangeInUnits.lowerBound)))
+           
             for x in stride(from: xRangeInUnits.lowerBound, through: xRangeInUnits.upperBound, by: 0.01) {
-                
                 /*
                  * The rect's origin is the top-left corner with the positive y-axis going down.
                  * To draw around the center of the rect we need to:
@@ -25,11 +24,19 @@ struct PolynomialPath: Shape {
                  *  2. Offset it.
                  *  3. Invert y-axis values.
                  */
+                
                 let xOffset = (rect.width / 2)
                 let yOffset = (rect.height / 2)
                 let px = x * unitToPointScale + xOffset
                 let py = -polynomial(x) * unitToPointScale + yOffset
-                p.addLine(to: CGPoint(x: px, y: py))
+                                
+                // Only print if point is visible in the rect.
+                if rect.contains(CGPoint(x: px, y: py)) && p.isEmpty {
+                    p.move(to: CGPoint(x: px, y: py))
+                }
+                if !p.isEmpty {
+                    p.addLine(to: CGPoint(x: px, y: py))
+                }
             }
         }
     }
