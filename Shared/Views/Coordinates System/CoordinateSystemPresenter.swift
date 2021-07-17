@@ -10,19 +10,19 @@ import Combine
 
 class CoordinateSystemPresenter: ObservableObject {
     
-    @Published var polynomial: Polynomial
+    @Published var function: Function
     private var subscription: AnyCancellable!
     
     private let dataSource: CurrentPolynomialDataSource
     
     init(dataSource: CurrentPolynomialDataSource) {
         self.dataSource = dataSource
-        self.polynomial = self.dataSource.polynomial
+        self.function = self.dataSource.polynomial
     }
     
     public func bind() {
         self.subscription = self.dataSource.$polynomial.sink(receiveValue: { newPolynomial  in
-            self.polynomial = newPolynomial
+            self.function = newPolynomial
         })
     }
     

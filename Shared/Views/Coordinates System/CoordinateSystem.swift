@@ -44,7 +44,7 @@ struct CoordinateSystem: View {
                 .stroke(lineWidth: axisLineWidth)
 
             // Functions
-            PolynomialView(polynomial: presenter.polynomial,
+            FunctionView(f: presenter.function,
                            xRangeInUnits: r15,
                            unitToPointScale: unitToPointsScale,
                            color: .pink)

@@ -18,7 +18,7 @@
 		006BB3AD26A2AC3A00D7F1B5 /* PolynomialFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB3AC26A2AC3A00D7F1B5 /* PolynomialFormula.swift */; };
 		006BB3AF26A2B99600D7F1B5 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB3AE26A2B99600D7F1B5 /* Function.swift */; };
 		006BFB75268E46DF0093805E /* Polynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BFB74268E46DF0093805E /* Polynomial.swift */; };
-		006BFB77268E46FE0093805E /* PolynomialViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BFB76268E46FE0093805E /* PolynomialViews.swift */; };
+		006BFB77268E46FE0093805E /* FunctionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BFB76268E46FE0093805E /* FunctionViews.swift */; };
 		00A747022692061D00A81B9D /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A747012692061D00A81B9D /* ContainerView.swift */; };
 		00DCF3EA266563E500B70B46 /* ComplexNumbersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCF3D7266563E300B70B46 /* ComplexNumbersApp.swift */; };
 		00DCF3EB266563E500B70B46 /* ComplexNumbersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCF3D7266563E300B70B46 /* ComplexNumbersApp.swift */; };
@@ -41,7 +41,7 @@
 		006BB3AC26A2AC3A00D7F1B5 /* PolynomialFormula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolynomialFormula.swift; sourceTree = "<group>"; };
 		006BB3AE26A2B99600D7F1B5 /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		006BFB74268E46DF0093805E /* Polynomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polynomial.swift; sourceTree = "<group>"; };
-		006BFB76268E46FE0093805E /* PolynomialViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolynomialViews.swift; sourceTree = "<group>"; };
+		006BFB76268E46FE0093805E /* FunctionViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionViews.swift; sourceTree = "<group>"; };
 		00A747012692061D00A81B9D /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		00DCF3D7266563E300B70B46 /* ComplexNumbersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexNumbersApp.swift; sourceTree = "<group>"; };
 		00DCF3D8266563E300B70B46 /* CoordinateSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateSystem.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		006BFB7A268E47A80093805E /* Function Views */ = {
 			isa = PBXGroup;
 			children = (
-				006BFB76268E46FE0093805E /* PolynomialViews.swift */,
+				006BFB76268E46FE0093805E /* FunctionViews.swift */,
 				006BB3AC26A2AC3A00D7F1B5 /* PolynomialFormula.swift */,
 			);
 			path = "Function Views";
@@ -300,7 +300,7 @@
 				000C88C026A17DA2004062C5 /* MenuPresenter.swift in Sources */,
 				000C88C226A17F8B004062C5 /* MenuView.swift in Sources */,
 				0043C1A4268BAB7500EC9AAE /* WithCoordinatesModifier.swift in Sources */,
-				006BFB77268E46FE0093805E /* PolynomialViews.swift in Sources */,
+				006BFB77268E46FE0093805E /* FunctionViews.swift in Sources */,
 				006BB3AD26A2AC3A00D7F1B5 /* PolynomialFormula.swift in Sources */,
 				00A747022692061D00A81B9D /* ContainerView.swift in Sources */,
 				000C88C526A1CFE9004062C5 /* CurrentPolynomialDataSource.swift in Sources */,

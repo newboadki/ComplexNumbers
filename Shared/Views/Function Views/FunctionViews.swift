@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct PolynomialPath: Shape {
+struct FunctionPath: Shape {
     
-    let polynomial: Polynomial
+    let f: Function
     let xRangeInUnits: Range<Double>
     let unitToPointScale: Double
         
@@ -26,7 +26,7 @@ struct PolynomialPath: Shape {
                 let xOffset = (rect.width / 2)
                 let yOffset = (rect.height / 2)
                 let px = x * unitToPointScale + xOffset
-                let py = -polynomial(x) * unitToPointScale + yOffset
+                let py = -f(x) * unitToPointScale + yOffset
                                 
                 // Only print if point is visible in the rect.
                 if rect.contains(CGPoint(x: px, y: py)) && p.isEmpty {
@@ -40,15 +40,15 @@ struct PolynomialPath: Shape {
     }
 }
 
-struct PolynomialView: View {
+struct FunctionView: View {
 
-    let polynomial: Polynomial
+    let f: Function
     let xRangeInUnits: Range<Double>
     let unitToPointScale: Double
     let color: Color
 
     var body: some View {
-        PolynomialPath(polynomial: polynomial,
+        FunctionPath(f: f,
                        xRangeInUnits: xRangeInUnits,
                        unitToPointScale: unitToPointScale)
             .stroke(color, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .miter, miterLimit: 0, dash: [], dashPhase: 0))
