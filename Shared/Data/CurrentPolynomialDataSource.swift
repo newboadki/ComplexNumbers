@@ -9,21 +9,21 @@ import Combine
 
 class CurrentPolynomialDataSource {
     
-    @Published private(set) var polynomial: Polynomial
+    @Published private(set) var function: Polynomial
     
     init() {
-        self.polynomial = Polynomial(terms: [])
+        self.function = Polynomial(terms: [])
     }
     
     func increaseOrder() {
-        polynomial.terms.append(Polynomial.Term(id: polynomial.terms.count, coefficient: 1))
+        function.terms.append(Polynomial.Term(id: function.terms.count, coefficient: 1))
     }
     
     func decreaseOrder() {
-        polynomial.terms.removeLast()
+        function.terms.removeLast()
     }
     
     func setCoefficient(_ value: Double, at index: Int) {
-        polynomial.terms[index] = Polynomial.Term(id: index, coefficient: value)
+        function.terms[index] = Polynomial.Term(id: index, coefficient: value)
     }
 }

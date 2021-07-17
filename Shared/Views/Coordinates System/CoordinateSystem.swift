@@ -44,10 +44,16 @@ struct CoordinateSystem: View {
                 .stroke(lineWidth: axisLineWidth)
 
             // Functions
-            FunctionView(f: presenter.function,
+            FunctionView(f: Log(base: 2),
                            xRangeInUnits: r15,
                            unitToPointScale: unitToPointsScale,
                            color: .pink)
+            
+            FunctionView(f: presenter.function,
+                           xRangeInUnits: r15,
+                           unitToPointScale: unitToPointsScale,
+                           color: .green)
+
             
         }
         .unitLength(unitToPointsScale)

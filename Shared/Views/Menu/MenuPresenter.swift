@@ -16,21 +16,21 @@ class MenuPresenter: ObservableObject {
     
     init(dataSource: CurrentPolynomialDataSource) {
         self.dataSource = dataSource
-        self.polynomial = self.dataSource.polynomial
+        self.polynomial = self.dataSource.function
     }
     
     func increaseOrder() {
         dataSource.increaseOrder()
-        self.polynomial = self.dataSource.polynomial
+        self.polynomial = self.dataSource.function
     }
     
     func decreaseOrder() {
         dataSource.decreaseOrder()
-        self.polynomial = self.dataSource.polynomial
+        self.polynomial = self.dataSource.function
     }
     
     func setCoefficient(_ value: Double, at index: Int) {
         dataSource.setCoefficient(value, at: index)
-        self.polynomial = self.dataSource.polynomial
+        self.polynomial = self.dataSource.function
     }
 }

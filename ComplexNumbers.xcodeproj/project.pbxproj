@@ -17,6 +17,7 @@
 		0043C1A5268BAB7500EC9AAE /* WithCoordinatesModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043C1A3268BAB7500EC9AAE /* WithCoordinatesModifier.swift */; };
 		006BB3AD26A2AC3A00D7F1B5 /* PolynomialFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB3AC26A2AC3A00D7F1B5 /* PolynomialFormula.swift */; };
 		006BB3AF26A2B99600D7F1B5 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB3AE26A2B99600D7F1B5 /* Function.swift */; };
+		006BB3B126A2BD4900D7F1B5 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB3B026A2BD4900D7F1B5 /* Log.swift */; };
 		006BFB75268E46DF0093805E /* Polynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BFB74268E46DF0093805E /* Polynomial.swift */; };
 		006BFB77268E46FE0093805E /* FunctionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BFB76268E46FE0093805E /* FunctionViews.swift */; };
 		00A747022692061D00A81B9D /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A747012692061D00A81B9D /* ContainerView.swift */; };
@@ -40,6 +41,7 @@
 		0043C1A3268BAB7500EC9AAE /* WithCoordinatesModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithCoordinatesModifier.swift; sourceTree = "<group>"; };
 		006BB3AC26A2AC3A00D7F1B5 /* PolynomialFormula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolynomialFormula.swift; sourceTree = "<group>"; };
 		006BB3AE26A2B99600D7F1B5 /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
+		006BB3B026A2BD4900D7F1B5 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		006BFB74268E46DF0093805E /* Polynomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polynomial.swift; sourceTree = "<group>"; };
 		006BFB76268E46FE0093805E /* FunctionViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionViews.swift; sourceTree = "<group>"; };
 		00A747012692061D00A81B9D /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				006BFB74268E46DF0093805E /* Polynomial.swift */,
 				006BB3AE26A2B99600D7F1B5 /* Function.swift */,
+				006BB3B026A2BD4900D7F1B5 /* Log.swift */,
 			);
 			path = Maths;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				000C88C026A17DA2004062C5 /* MenuPresenter.swift in Sources */,
 				000C88C226A17F8B004062C5 /* MenuView.swift in Sources */,
 				0043C1A4268BAB7500EC9AAE /* WithCoordinatesModifier.swift in Sources */,
+				006BB3B126A2BD4900D7F1B5 /* Log.swift in Sources */,
 				006BFB77268E46FE0093805E /* FunctionViews.swift in Sources */,
 				006BB3AD26A2AC3A00D7F1B5 /* PolynomialFormula.swift in Sources */,
 				00A747022692061D00A81B9D /* ContainerView.swift in Sources */,

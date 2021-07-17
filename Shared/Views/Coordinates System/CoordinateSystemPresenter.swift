@@ -17,11 +17,11 @@ class CoordinateSystemPresenter: ObservableObject {
     
     init(dataSource: CurrentPolynomialDataSource) {
         self.dataSource = dataSource
-        self.function = self.dataSource.polynomial
+        self.function = self.dataSource.function
     }
     
     public func bind() {
-        self.subscription = self.dataSource.$polynomial.sink(receiveValue: { newPolynomial  in
+        self.subscription = self.dataSource.$function.sink(receiveValue: { newPolynomial  in
             self.function = newPolynomial
         })
     }

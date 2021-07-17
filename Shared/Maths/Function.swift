@@ -8,5 +8,5 @@
 import Foundation
 
 protocol Function {
-    func callAsFunction(_ x: Double) -> Double
+    func callAsFunction(_ x: Double...) -> Double
 }
