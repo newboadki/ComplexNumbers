@@ -36,6 +36,7 @@ struct CoordinateSystem: View {
             VerticalMarks(distance: unitToPointsScale)
                 .stroke(Color.blue.opacity(0.2), style: StrokeStyle(lineWidth: axisLineWidth, lineCap: .round, lineJoin: .miter, miterLimit: 10, dash: [5,5], dashPhase: 0))
 
+            
             // Axes
             HorizontalMarks(distance: unitToPointsScale, markLength: 10)
                 .stroke(lineWidth: axisLineWidth)
@@ -53,8 +54,9 @@ struct CoordinateSystem: View {
                            xRangeInUnits: r15,
                            unitToPointScale: unitToPointsScale,
                            color: .green)
-
             
+            HorizontalNumbers(unitToPointsScale: unitToPointsScale)
+            VerticalNumbers(unitToPointsScale: unitToPointsScale)
         }
         .unitLength(unitToPointsScale)
         .ignoresSafeArea()
@@ -145,6 +147,63 @@ struct CoordinateSystem: View {
                          offsetModifier: { $0 + unitToPointsScale },
                          continueIterating: { $0 < rect.maxY })
             }
+        }
+    }
+    
+    struct HorizontalNumbers: View {
+        
+        let unitToPointsScale: CGFloat
+
+        var body: some View {
+            
+            Color.clear.background(GeometryReader { g in
+                let count = (g.size.width / unitToPointsScale)
+                Group {
+                    ForEach(0..<Int(count)) { i in
+                        Text("\(i)").offset(x: g.size.width/2 - 5 + CGFloat(i)*unitToPointsScale, y: g.size.height/2 + 10)
+                    }
+                }
+                
+                Group {
+                    ForEach(0..<Int(count)) { i in
+                        let xOffset = g.size.width/2 - 5 - CGFloat(i)*unitToPointsScale
+                        if xOffset > 0 {
+                            Text("\(-i)").offset(x: xOffset, y: g.size.height/2 + 10)
+                        }
+                        
+                    }
+                }
+            })
+        }
+    }
+    
+    struct VerticalNumbers: View {
+        
+        let unitToPointsScale: CGFloat
+
+        var body: some View {
+            
+            Color.clear.background(GeometryReader { g in
+                let count = (g.size.width / unitToPointsScale)
+                Group {
+                    ForEach(0..<Int(count)) { i in
+                        let yOffset = g.size.height/2 - 10 + CGFloat(i)*unitToPointsScale
+                        if (i != 0) && (yOffset < g.size.height) {
+                            Text("\(-i)")
+                                .offset(x: g.size.width/2 + 10,
+                                        y: yOffset)
+                        }
+                    }
+                }
+                
+                Group {
+                    ForEach(0..<Int(count)) { i in
+                        if i != 0 {
+                            Text("\(i)").offset(x: g.size.width/2 + 10, y: g.size.height/2 - 10 - CGFloat(i)*unitToPointsScale)
+                        }
+                    }
+                }
+            })
         }
     }
 }
