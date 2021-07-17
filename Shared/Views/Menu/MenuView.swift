@@ -21,16 +21,10 @@ struct Menu: View {
             Spacer()
             
             List {
-                HStack {
-                    ForEach(presenter.polynomial.coefficients.reversed()) { c in
-                        Text("\(String(format:"%.1f", c.value))*x^\(Int(c.id))")
-                    }
-                }
+                PolynomialFormula(polynomial: presenter.polynomial)
                 
                 HStack {
-                    Text("\(presenter.polynomial.coefficients.count)")
-                   
-                    Stepper("Order") {
+                    Stepper("Order \(presenter.polynomial.terms.count - 1)") {
                         presenter.increaseOrder()
                          
                     } onDecrement: {
@@ -39,14 +33,14 @@ struct Menu: View {
                 }
                 
                 Section {
-                    ForEach(presenter.polynomial.coefficients.reversed()) { c in
+                    ForEach(presenter.polynomial.terms.reversed()) { t in
                         HStack {
-                            Text("Order: \(Int(c.id))")
-                            Text("Coefficient: \(String(format:"%.1f", c.value))")
+                            Text("Order: \(Int(t.id))")
+                            Text("Coefficient: \(String(format:"%.1f", t.coefficient))")
                             Stepper("") {
-                                self.presenter.setCoefficient(c.value + 0.1, at: c.id)
+                                self.presenter.setCoefficient(t.coefficient + 0.1, at: t.id)
                             } onDecrement: {
-                                self.presenter.setCoefficient(c.value - 0.1, at: c.id)
+                                self.presenter.setCoefficient(t.coefficient - 0.1, at: t.id)
                             }
                         }
                     }

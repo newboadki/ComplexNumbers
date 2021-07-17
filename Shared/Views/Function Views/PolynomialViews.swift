@@ -14,8 +14,7 @@ struct PolynomialPath: Shape {
     let unitToPointScale: Double
         
     func path(in rect: CGRect) -> Path {
-        Path { p in
-           
+        Path { p in           
             for x in stride(from: xRangeInUnits.lowerBound, through: xRangeInUnits.upperBound, by: 0.01) {
                 /*
                  * The rect's origin is the top-left corner with the positive y-axis going down.
@@ -24,7 +23,6 @@ struct PolynomialPath: Shape {
                  *  2. Offset it.
                  *  3. Invert y-axis values.
                  */
-                
                 let xOffset = (rect.width / 2)
                 let yOffset = (rect.height / 2)
                 let px = x * unitToPointScale + xOffset

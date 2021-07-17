@@ -12,18 +12,18 @@ class CurrentPolynomialDataSource {
     @Published private(set) var polynomial: Polynomial
     
     init() {
-        self.polynomial = Polynomial(coefficients: [])
+        self.polynomial = Polynomial(terms: [])
     }
     
     func increaseOrder() {
-        polynomial.coefficients.append(Polynomial.Coefficient(id: polynomial.coefficients.count, value: 1))
+        polynomial.terms.append(Polynomial.Term(id: polynomial.terms.count, coefficient: 1))
     }
     
     func decreaseOrder() {
-        polynomial.coefficients.removeLast()
+        polynomial.terms.removeLast()
     }
     
     func setCoefficient(_ value: Double, at index: Int) {
-        polynomial.coefficients[index] = Polynomial.Coefficient(id: index, value: value)
+        polynomial.terms[index] = Polynomial.Term(id: index, coefficient: value)
     }
 }

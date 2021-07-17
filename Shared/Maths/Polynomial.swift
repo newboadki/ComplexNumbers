@@ -7,20 +7,20 @@
 
 import Foundation
 
-struct Polynomial {
+struct Polynomial: Function {
     
-    struct Coefficient: Identifiable {
+    struct Term: Identifiable {
         let id: Int
-        let value: Double
+        let coefficient: Double
     }
     
     ///  The order of each coefficient increases from 0 to N, with N being the order of the polynomial
-    var coefficients: [Coefficient]
+    var terms: [Term]
     
     func callAsFunction(_ x: Double) -> Double {
         var y: Double = 0
-        for (index, c) in coefficients.enumerated() {
-            y += c.value * pow(x, Double(index))
+        for (index, t) in terms.enumerated() {
+            y += t.coefficient * pow(x, Double(index))
         }
         return y
     }

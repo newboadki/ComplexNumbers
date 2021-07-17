@@ -9,13 +9,13 @@ import SwiftUI
 import ComplexModule
 
 
-let cuadratic = Polynomial(coefficients: [Polynomial.Coefficient(id: 0, value: 0),
-                                          Polynomial.Coefficient(id: 1, value: 0),
-                                          Polynomial.Coefficient(id: 2, value: 0.4)])
-let cubic = Polynomial(coefficients: [Polynomial.Coefficient(id: 0, value: 0),
-                                      Polynomial.Coefficient(id: 1, value: 0),
-                                      Polynomial.Coefficient(id: 2, value: 1),
-                                      Polynomial.Coefficient(id: 3, value: 1)])
+let cuadratic = Polynomial(terms: [Polynomial.Term(id: 0, coefficient: 0),
+                                          Polynomial.Term(id: 1, coefficient: 0),
+                                          Polynomial.Term(id: 2, coefficient: 0.4)])
+let cubic = Polynomial(terms: [Polynomial.Term(id: 0, coefficient: 0),
+                                      Polynomial.Term(id: 1, coefficient: 0),
+                                      Polynomial.Term(id: 2, coefficient: 1),
+                                      Polynomial.Term(id: 3, coefficient: 1)])
 let r15 = (-15.0..<15.0)
 
 struct CoordinateSystem: View {
