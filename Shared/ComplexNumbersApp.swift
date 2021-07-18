@@ -12,7 +12,7 @@ struct ComplexNumbersApp: App {
     
     private static let currentPolynomialDataSource = CurrentPolynomialDataSource()
     private var menuPresenter = MenuPresenter(dataSource: currentPolynomialDataSource)
-    private var coordinateSystemPresenter = CoordinateSystemPresenter(dataSource: currentPolynomialDataSource)
+    private var coordinateSystemPresenter: CoordinateSystemPresenter<Polynomial> = CoordinateSystemPresenter<Polynomial>(dataSource: currentPolynomialDataSource)
     
     var body: some Scene {
         WindowGroup {

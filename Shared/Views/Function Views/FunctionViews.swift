@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct FunctionPath: Shape {
+struct FunctionPath<F: Function>: Shape where F.R == Double {
     
-    let f: Function
+    let f: F
     let xRangeInUnits: Range<Double>
     let unitToPointScale: Double
         
@@ -23,8 +23,8 @@ struct FunctionPath: Shape {
                  *  2. Offset it.
                  *  3. Invert y-axis values.
                  */
-                let xOffset = (rect.width / 2)
-                let yOffset = (rect.height / 2)
+                let xOffset = Double((rect.width / 2))
+                let yOffset = Double((rect.height / 2))
                 let px = x * unitToPointScale + xOffset
                 let py = -f(x) * unitToPointScale + yOffset
                                 
@@ -40,9 +40,9 @@ struct FunctionPath: Shape {
     }
 }
 
-struct FunctionView: View {
+struct FunctionView<F: Function>: View where F.R == Double {
 
-    let f: Function
+    let f: F
     let xRangeInUnits: Range<Double>
     let unitToPointScale: Double
     let color: Color

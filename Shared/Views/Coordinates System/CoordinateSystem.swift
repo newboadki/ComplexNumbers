@@ -25,7 +25,7 @@ struct CoordinateSystem: View {
     
     private let axisLineWidth: CGFloat = 1
     
-    @ObservedObject var presenter: CoordinateSystemPresenter
+    @ObservedObject var presenter: CoordinateSystemPresenter<Polynomial>
     
     var body: some View {
         ZStack {
@@ -249,8 +249,9 @@ func addMarks(toPath p: inout Path,
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        CoordinateSystem(presenter: CoordinateSystemPresenter(dataSource: CurrentPolynomialDataSource()))
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CoordinateSystem(presenter: CoordinateSystemPresenter<Polynomial>(dataSource:
+//    ()))
+//    }
+//}

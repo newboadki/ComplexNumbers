@@ -20,7 +20,9 @@ class CurrentPolynomialDataSource {
     }
     
     func decreaseOrder() {
-        function.terms.removeLast()
+        if !function.terms.isEmpty {
+            function.terms.removeLast()
+        }
     }
     
     func setCoefficient(_ value: Double, at index: Int) {

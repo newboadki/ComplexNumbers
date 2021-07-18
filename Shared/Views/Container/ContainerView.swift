@@ -11,9 +11,9 @@ struct ContainerView: View {
     
     private var presenter: MenuPresenter
     
-    private var coordinateSytemPresenter: CoordinateSystemPresenter
+    private var coordinateSytemPresenter: CoordinateSystemPresenter<Polynomial>
     
-    init(presenter: MenuPresenter, coordinateSytemPresenter: CoordinateSystemPresenter) {
+    init(presenter: MenuPresenter, coordinateSytemPresenter: CoordinateSystemPresenter<Polynomial>) {
         self.presenter = presenter
         self.coordinateSytemPresenter = coordinateSytemPresenter
     }
