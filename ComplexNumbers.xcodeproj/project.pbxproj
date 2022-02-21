@@ -20,6 +20,9 @@
 		006BB3B126A2BD4900D7F1B5 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BB3B026A2BD4900D7F1B5 /* Log.swift */; };
 		006BFB75268E46DF0093805E /* Polynomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BFB74268E46DF0093805E /* Polynomial.swift */; };
 		006BFB77268E46FE0093805E /* FunctionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BFB76268E46FE0093805E /* FunctionViews.swift */; };
+		008AF20B27C3FC840060282A /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 008AF20A27C3FC840060282A /* Resolver */; };
+		008AF20E27C3FCAE0060282A /* Application+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AF20D27C3FCAE0060282A /* Application+Injection.swift */; };
+		008AF20F27C3FCB30060282A /* Application+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008AF20D27C3FCAE0060282A /* Application+Injection.swift */; };
 		00A747022692061D00A81B9D /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A747012692061D00A81B9D /* ContainerView.swift */; };
 		00DCF3EA266563E500B70B46 /* ComplexNumbersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCF3D7266563E300B70B46 /* ComplexNumbersApp.swift */; };
 		00DCF3EB266563E500B70B46 /* ComplexNumbersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCF3D7266563E300B70B46 /* ComplexNumbersApp.swift */; };
@@ -44,6 +47,7 @@
 		006BB3B026A2BD4900D7F1B5 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		006BFB74268E46DF0093805E /* Polynomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polynomial.swift; sourceTree = "<group>"; };
 		006BFB76268E46FE0093805E /* FunctionViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionViews.swift; sourceTree = "<group>"; };
+		008AF20D27C3FCAE0060282A /* Application+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Application+Injection.swift"; sourceTree = "<group>"; };
 		00A747012692061D00A81B9D /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		00DCF3D7266563E300B70B46 /* ComplexNumbersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexNumbersApp.swift; sourceTree = "<group>"; };
 		00DCF3D8266563E300B70B46 /* CoordinateSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateSystem.swift; sourceTree = "<group>"; };
@@ -62,6 +66,7 @@
 			files = (
 				00DCF3FC266564B400B70B46 /* RealModule in Frameworks */,
 				00DCF3FE266564B400B70B46 /* Numerics in Frameworks */,
+				008AF20B27C3FC840060282A /* Resolver in Frameworks */,
 				00DCF3FA266564B400B70B46 /* ComplexModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +139,14 @@
 			path = "Function Views";
 			sourceTree = "<group>";
 		};
+		008AF20C27C3FC9E0060282A /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				008AF20D27C3FCAE0060282A /* Application+Injection.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		00A747002692060C00A81B9D /* Container */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				00DCF3D7266563E300B70B46 /* ComplexNumbersApp.swift */,
+				008AF20C27C3FC9E0060282A /* DI */,
 				000C88C326A1CE1E004062C5 /* Data */,
 				006BFB73268E46C60093805E /* Maths */,
 				006BFB78268E47710093805E /* Views */,
@@ -210,6 +224,7 @@
 				00DCF3F9266564B400B70B46 /* ComplexModule */,
 				00DCF3FB266564B400B70B46 /* RealModule */,
 				00DCF3FD266564B400B70B46 /* Numerics */,
+				008AF20A27C3FC840060282A /* Resolver */,
 			);
 			productName = "ComplexNumbers (iOS)";
 			productReference = 00DCF3DE266563E500B70B46 /* ComplexNumbers.app */;
@@ -260,6 +275,7 @@
 			mainGroup = 00DCF3D1266563E300B70B46;
 			packageReferences = (
 				00DCF3F8266564B400B70B46 /* XCRemoteSwiftPackageReference "swift-numerics" */,
+				008AF20927C3FC840060282A /* XCRemoteSwiftPackageReference "Resolver" */,
 			);
 			productRefGroup = 00DCF3DF266563E500B70B46 /* Products */;
 			projectDirPath = "";
@@ -308,6 +324,7 @@
 				006BB3AD26A2AC3A00D7F1B5 /* PolynomialFormula.swift in Sources */,
 				00A747022692061D00A81B9D /* ContainerView.swift in Sources */,
 				000C88C526A1CFE9004062C5 /* CurrentPolynomialDataSource.swift in Sources */,
+				008AF20E27C3FCAE0060282A /* Application+Injection.swift in Sources */,
 				00DCF3EA266563E500B70B46 /* ComplexNumbersApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +336,7 @@
 				00DCF3ED266563E500B70B46 /* CoordinateSystem.swift in Sources */,
 				0043C1A2268BA9C600EC9AAE /* CoordinateSystemUnitLengthEvironmentKey.swift in Sources */,
 				0043C1A5268BAB7500EC9AAE /* WithCoordinatesModifier.swift in Sources */,
+				008AF20F27C3FCB30060282A /* Application+Injection.swift in Sources */,
 				00DCF3EB266563E500B70B46 /* ComplexNumbersApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,6 +583,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		008AF20927C3FC840060282A /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		00DCF3F8266564B400B70B46 /* XCRemoteSwiftPackageReference "swift-numerics" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-numerics";
@@ -576,6 +602,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		008AF20A27C3FC840060282A /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 008AF20927C3FC840060282A /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
 		00DCF3F9266564B400B70B46 /* ComplexModule */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 00DCF3F8266564B400B70B46 /* XCRemoteSwiftPackageReference "swift-numerics" */;
