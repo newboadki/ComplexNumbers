@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class MenuPresenter: ObservableObject {
+final class MenuPresenter: ObservableObject {
     
     @Published var polynomial: Polynomial
     

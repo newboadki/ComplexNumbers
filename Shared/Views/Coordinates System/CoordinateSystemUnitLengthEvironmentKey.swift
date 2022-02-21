@@ -14,7 +14,7 @@ struct UnitLengthKey: EnvironmentKey {
 extension EnvironmentValues {
     var unitLength: CGFloat {
         get { self[UnitLengthKey.self] }
-        set { self[UnitLengthKey] = newValue }
+        set { self[UnitLengthKey.self] = newValue }
     }
 }
 

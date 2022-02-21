@@ -16,7 +16,7 @@ let cubic = Polynomial(terms: [Polynomial.Term(id: 0, coefficient: 0),
                                       Polynomial.Term(id: 1, coefficient: 0),
                                       Polynomial.Term(id: 2, coefficient: 1),
                                       Polynomial.Term(id: 3, coefficient: 1)])
-let r15 = (-15.0..<15.0)
+let r15 = (-50.0..<50.0)
 
 struct CoordinateSystem: View {
         
@@ -28,44 +28,46 @@ struct CoordinateSystem: View {
     @ObservedObject var presenter: CoordinateSystemPresenter<Polynomial>
     
     var body: some View {
-        ZStack {
-            // Grid
-            HorizontalMarks(distance: unitToPointsScale)
-                .stroke(Color.blue.opacity(0.2), style: StrokeStyle(lineWidth: axisLineWidth, lineCap: .round, lineJoin: .miter, miterLimit: 10, dash: [5,5], dashPhase: 0))
+        
+            ZStack {
+                // Grid
+                HorizontalMarks(distance: unitToPointsScale)
+                    .stroke(Color.blue.opacity(0.2), style: StrokeStyle(lineWidth: axisLineWidth, lineCap: .round, lineJoin: .miter, miterLimit: 10, dash: [5,5], dashPhase: 0))
 
-            VerticalMarks(distance: unitToPointsScale)
-                .stroke(Color.blue.opacity(0.2), style: StrokeStyle(lineWidth: axisLineWidth, lineCap: .round, lineJoin: .miter, miterLimit: 10, dash: [5,5], dashPhase: 0))
+                VerticalMarks(distance: unitToPointsScale)
+                    .stroke(Color.blue.opacity(0.2), style: StrokeStyle(lineWidth: axisLineWidth, lineCap: .round, lineJoin: .miter, miterLimit: 10, dash: [5,5], dashPhase: 0))
 
-            
-            // Axes
-            HorizontalMarks(distance: unitToPointsScale, markLength: 10)
-                .stroke(lineWidth: axisLineWidth)
+                
+                // Axes
+                HorizontalMarks(distance: unitToPointsScale, markLength: 10)
+                    .stroke(lineWidth: axisLineWidth)
 
-            VerticalMarks(distance: unitToPointsScale, markLength: 10)
-                .stroke(lineWidth: axisLineWidth)
+                VerticalMarks(distance: unitToPointsScale, markLength: 10)
+                    .stroke(lineWidth: axisLineWidth)
 
-            // Functions
-            FunctionView(f: Log(base: 2),
-                           xRangeInUnits: r15,
-                           unitToPointScale: unitToPointsScale,
-                           color: .pink)
-            
-            FunctionView(f: presenter.function,
-                           xRangeInUnits: r15,
-                           unitToPointScale: unitToPointsScale,
-                           color: .green)
-            
-            HorizontalNumbers(unitToPointsScale: unitToPointsScale)
-            VerticalNumbers(unitToPointsScale: unitToPointsScale)
-        }
-        .unitLength(unitToPointsScale)
-        .ignoresSafeArea()
-        .onAppear {
-            self.presenter.bind()
-        }
-        .onDisappear {
-            self.presenter.unbind()
-        }
+                // Functions
+                FunctionView(f: Log(base: 2),
+                               xRangeInUnits: r15,
+                               unitToPointScale: unitToPointsScale,
+                               color: .pink)
+                
+                FunctionView(f: presenter.function,
+                               xRangeInUnits: r15,
+                               unitToPointScale: unitToPointsScale,
+                               color: .green)
+                
+                HorizontalNumbers(unitToPointsScale: unitToPointsScale)
+                VerticalNumbers(unitToPointsScale: unitToPointsScale)
+            }
+            .unitLength(unitToPointsScale)
+            .ignoresSafeArea()
+            .onAppear {
+                self.presenter.bind()
+            }
+            .onDisappear {
+                self.presenter.unbind()
+            }
+        
     }
     
     struct HorizontalMarks: Shape {
@@ -208,19 +210,19 @@ struct CoordinateSystem: View {
     }
 }
 
-typealias OffsetModifierFunction = (CGFloat) -> (CGFloat)
-typealias ContinueIteratingFunction = (CGFloat) -> (Bool)
-enum BidimensionalAxis { case vertical, horizontal }
+fileprivate typealias OffsetModifierFunction = (CGFloat) -> (CGFloat)
+fileprivate typealias ContinueIteratingFunction = (CGFloat) -> (Bool)
+fileprivate enum BidimensionalAxis { case vertical, horizontal }
 
-func addMarks(toPath p: inout Path,
-              offsetStart: CGFloat,
-              offsetEnd: CGFloat,
-              center: CGPoint,
-              markLength: CGFloat,
-              axis: BidimensionalAxis,
-              fixedAxisValue: CGFloat,
-              offsetModifier: OffsetModifierFunction,
-              continueIterating: ContinueIteratingFunction) {
+fileprivate func addMarks(toPath p: inout Path,
+                          offsetStart: CGFloat,
+                          offsetEnd: CGFloat,
+                          center: CGPoint,
+                          markLength: CGFloat,
+                          axis: BidimensionalAxis,
+                          fixedAxisValue: CGFloat,
+                          offsetModifier: OffsetModifierFunction,
+                          continueIterating: ContinueIteratingFunction) {
     var offset: CGFloat = offsetStart
     p.move(to: center)
     while continueIterating(offset) {

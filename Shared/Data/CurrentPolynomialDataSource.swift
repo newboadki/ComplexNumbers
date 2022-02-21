@@ -7,7 +7,7 @@
 
 import Combine
 
-class CurrentPolynomialDataSource {
+final class CurrentPolynomialDataSource {
     
     @Published private(set) var function: Polynomial
     

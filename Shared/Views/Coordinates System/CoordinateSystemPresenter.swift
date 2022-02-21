@@ -8,13 +8,12 @@
 import Foundation
 import Combine
 
-class CoordinateSystemPresenter<F: Function>: ObservableObject {
+final class CoordinateSystemPresenter<F: Function>: ObservableObject {
     
     @Published var function: F
+    
     private var subscription: AnyCancellable!
-    
     private let dataSource: CurrentPolynomialDataSource
-    
     
     init(dataSource: CurrentPolynomialDataSource) {
         self.dataSource = dataSource
