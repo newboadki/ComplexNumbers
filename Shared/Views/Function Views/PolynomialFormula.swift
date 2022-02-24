@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// This represents a polynomial expression like x^2 + 4x +10
 struct PolynomialFormula: View {
     
     let polynomial: Polynomial

@@ -51,7 +51,11 @@ struct FunctionView<F: Function>: View where F.R == Double {
         FunctionPath(f: f,
                        xRangeInUnits: xRangeInUnits,
                        unitToPointScale: unitToPointScale)
-            .stroke(color, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .miter, miterLimit: 0, dash: [], dashPhase: 0))
-
+            .stroke(color, style: StrokeStyle(lineWidth: 2,
+                                              lineCap: .round,
+                                              lineJoin: .miter,
+                                              miterLimit: 0,
+                                              dash: [],
+                                              dashPhase: 0))
     }
 }
