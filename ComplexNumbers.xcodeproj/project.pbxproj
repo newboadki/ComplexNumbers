@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000A68A42827A52D008431F7 /* ComplexModule in Frameworks */ = {isa = PBXBuildFile; productRef = 000A68A32827A52D008431F7 /* ComplexModule */; };
+		000A68A62827A52D008431F7 /* Numerics in Frameworks */ = {isa = PBXBuildFile; productRef = 000A68A52827A52D008431F7 /* Numerics */; };
+		000A68A82827A52D008431F7 /* RealModule in Frameworks */ = {isa = PBXBuildFile; productRef = 000A68A72827A52D008431F7 /* RealModule */; };
 		000C88C026A17DA2004062C5 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000C88BF26A17DA2004062C5 /* MenuPresenter.swift */; };
 		000C88C226A17F8B004062C5 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000C88C126A17F8B004062C5 /* MenuView.swift */; };
 		000C88C526A1CFE9004062C5 /* CurrentPolynomialDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000C88C426A1CFE9004062C5 /* CurrentPolynomialDataSource.swift */; };
@@ -30,9 +33,6 @@
 		00DCF3ED266563E500B70B46 /* CoordinateSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCF3D8266563E300B70B46 /* CoordinateSystem.swift */; };
 		00DCF3EE266563E500B70B46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00DCF3D9266563E500B70B46 /* Assets.xcassets */; };
 		00DCF3EF266563E500B70B46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00DCF3D9266563E500B70B46 /* Assets.xcassets */; };
-		00DCF3FA266564B400B70B46 /* ComplexModule in Frameworks */ = {isa = PBXBuildFile; productRef = 00DCF3F9266564B400B70B46 /* ComplexModule */; };
-		00DCF3FC266564B400B70B46 /* RealModule in Frameworks */ = {isa = PBXBuildFile; productRef = 00DCF3FB266564B400B70B46 /* RealModule */; };
-		00DCF3FE266564B400B70B46 /* Numerics in Frameworks */ = {isa = PBXBuildFile; productRef = 00DCF3FD266564B400B70B46 /* Numerics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +57,7 @@
 		00DCF3E6266563E500B70B46 /* ComplexNumbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComplexNumbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00DCF3E8266563E500B70B46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00DCF3E9266563E500B70B46 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		00EAC9402847D6E700B14DC8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +65,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00DCF3FC266564B400B70B46 /* RealModule in Frameworks */,
-				00DCF3FE266564B400B70B46 /* Numerics in Frameworks */,
+				000A68A82827A52D008431F7 /* RealModule in Frameworks */,
 				008AF20B27C3FC840060282A /* Resolver in Frameworks */,
-				00DCF3FA266564B400B70B46 /* ComplexModule in Frameworks */,
+				000A68A62827A52D008431F7 /* Numerics in Frameworks */,
+				000A68A42827A52D008431F7 /* ComplexModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +159,7 @@
 		00DCF3D1266563E300B70B46 = {
 			isa = PBXGroup;
 			children = (
+				00EAC9402847D6E700B14DC8 /* README.md */,
 				00DCF3D6266563E300B70B46 /* Shared */,
 				00DCF3E0266563E500B70B46 /* iOS */,
 				00DCF3E7266563E500B70B46 /* macOS */,
@@ -221,10 +223,10 @@
 			);
 			name = "ComplexNumbers (iOS)";
 			packageProductDependencies = (
-				00DCF3F9266564B400B70B46 /* ComplexModule */,
-				00DCF3FB266564B400B70B46 /* RealModule */,
-				00DCF3FD266564B400B70B46 /* Numerics */,
 				008AF20A27C3FC840060282A /* Resolver */,
+				000A68A32827A52D008431F7 /* ComplexModule */,
+				000A68A52827A52D008431F7 /* Numerics */,
+				000A68A72827A52D008431F7 /* RealModule */,
 			);
 			productName = "ComplexNumbers (iOS)";
 			productReference = 00DCF3DE266563E500B70B46 /* ComplexNumbers.app */;
@@ -274,8 +276,8 @@
 			);
 			mainGroup = 00DCF3D1266563E300B70B46;
 			packageReferences = (
-				00DCF3F8266564B400B70B46 /* XCRemoteSwiftPackageReference "swift-numerics" */,
 				008AF20927C3FC840060282A /* XCRemoteSwiftPackageReference "Resolver" */,
+				000A68A22827A52D008431F7 /* XCRemoteSwiftPackageReference "swift-numerics" */,
 			);
 			productRefGroup = 00DCF3DF266563E500B70B46 /* Products */;
 			projectDirPath = "";
@@ -464,7 +466,7 @@
 				DEVELOPMENT_TEAM = 29ND5D76MZ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,7 +488,7 @@
 				DEVELOPMENT_TEAM = 29ND5D76MZ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -583,6 +585,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		000A68A22827A52D008431F7 /* XCRemoteSwiftPackageReference "swift-numerics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-numerics.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		008AF20927C3FC840060282A /* XCRemoteSwiftPackageReference "Resolver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Resolver.git";
@@ -591,36 +601,28 @@
 				kind = branch;
 			};
 		};
-		00DCF3F8266564B400B70B46 /* XCRemoteSwiftPackageReference "swift-numerics" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-numerics";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		000A68A32827A52D008431F7 /* ComplexModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 000A68A22827A52D008431F7 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = ComplexModule;
+		};
+		000A68A52827A52D008431F7 /* Numerics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 000A68A22827A52D008431F7 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = Numerics;
+		};
+		000A68A72827A52D008431F7 /* RealModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 000A68A22827A52D008431F7 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = RealModule;
+		};
 		008AF20A27C3FC840060282A /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 008AF20927C3FC840060282A /* XCRemoteSwiftPackageReference "Resolver" */;
 			productName = Resolver;
-		};
-		00DCF3F9266564B400B70B46 /* ComplexModule */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 00DCF3F8266564B400B70B46 /* XCRemoteSwiftPackageReference "swift-numerics" */;
-			productName = ComplexModule;
-		};
-		00DCF3FB266564B400B70B46 /* RealModule */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 00DCF3F8266564B400B70B46 /* XCRemoteSwiftPackageReference "swift-numerics" */;
-			productName = RealModule;
-		};
-		00DCF3FD266564B400B70B46 /* Numerics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 00DCF3F8266564B400B70B46 /* XCRemoteSwiftPackageReference "swift-numerics" */;
-			productName = Numerics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

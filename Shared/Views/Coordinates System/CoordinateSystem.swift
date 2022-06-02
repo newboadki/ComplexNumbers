@@ -171,8 +171,7 @@ struct CoordinateSystem: View {
                         let xOffset = g.size.width/2 - 5 - CGFloat(i)*unitToPointsScale
                         if xOffset > 0 {
                             Text("\(-i)").offset(x: xOffset, y: g.size.height/2 + 10)
-                        }
-                        
+                        }                        
                     }
                 }
             })
