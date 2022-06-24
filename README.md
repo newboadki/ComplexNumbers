@@ -22,7 +22,6 @@
 - _Log_ is another concrete implementation of _Function_.
 - _FunctionView_ is generic on a _Function_ conformant type. 
 
-
 ## Images
 
 <img src="https://user-images.githubusercontent.com/199423/171673217-c0e13898-816d-41a5-a015-e2835a6ea7f0.gif" alt="Creating a polynomial function" width="50%">
