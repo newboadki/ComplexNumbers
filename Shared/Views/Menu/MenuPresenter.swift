@@ -18,7 +18,7 @@ final class MenuPresenter: ObservableObject {
         self.dataSource = dataSource
         self.polynomial = self.dataSource.function
     }
-    
+
     func increaseOrder() {
         dataSource.increaseOrder()
         self.polynomial = self.dataSource.function
