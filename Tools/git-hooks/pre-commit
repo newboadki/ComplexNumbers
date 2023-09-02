@@ -1,0 +1,1 @@
+./Tools/git-hooks/git-format-staged --formatter "./Tools/swiftformat stdin --stdinpath '{}'" "*.swift"

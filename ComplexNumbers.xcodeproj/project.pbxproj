@@ -326,7 +326,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Tools/run-formatter.sh\n";
+			shellScript = "./Tools/run-build-formatter.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
