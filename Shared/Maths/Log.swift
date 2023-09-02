@@ -8,12 +8,11 @@
 import Foundation
 
 struct Log: Function {
-    
-    let base: Double    
-    
+    let base: Double
+
     func callAsFunction(_ x: Double...) -> Double {
         precondition(x.count == 1)
         let argument = x[0]
-        return (log(argument) / log(base)) // Base conversion, log's properties.
+        return log(argument) / log(base) // Base conversion, log's properties.
     }
 }

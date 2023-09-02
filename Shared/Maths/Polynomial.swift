@@ -8,15 +8,14 @@
 import Foundation
 
 struct Polynomial: Function {
-    
     struct Term: Identifiable {
         let id: Int
         let coefficient: Double
     }
-    
+
     ///  The order of each coefficient increases from 0 to N, with N being the order of the polynomial
     var terms: [Term]
-    
+
     func callAsFunction(_ x: Double...) -> Double {
         var y: Double = 0
         for (index, t) in terms.enumerated() {
